@@ -1,10 +1,10 @@
-package com.werfad.finder
+package com.fanyfull.finder
 
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.util.TextRange
-import com.werfad.KeyTagsGenerator
-import com.werfad.MarksCanvas
-import com.werfad.UserConfig
+import com.fanyfull.KeyTagsGenerator
+import com.fanyfull.MarksCanvas
+import com.fanyfull.UserConfig
 import kotlin.math.abs
 
 private val pattern = Regex("(?i)\\b\\w")

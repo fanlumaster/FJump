@@ -1,7 +1,7 @@
-package com.werfad
+package com.fanyfull
 
 import com.intellij.openapi.options.Configurable
-import com.werfad.UserConfig.DataBean
+import com.fanyfull.UserConfig.DataBean
 import javax.swing.JComponent
 
 class FJumpConfigurable : Configurable {
@@ -14,7 +14,7 @@ class FJumpConfigurable : Configurable {
     }
 
     override fun getDisplayName(): String {
-        return "KJump"
+        return "FJump"
     }
 
     override fun apply() {

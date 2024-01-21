@@ -1,30 +1,32 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.werfad</id>
+    <id>com.fanyfull</id>
     <name>FJump</name>
     <vendor url="https://github.com/fanlumaster/FJump">fanlumaster</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.werfad.UserConfig"/>
-        <applicationConfigurable instance="com.werfad.FJumpConfigurable"/>
+        <applicationService serviceImplementation="com.fanyfull.UserConfig"/>
+        <applicationConfigurable instance="com.fanyfull.FJumpConfigurable"/>
     </extensions>
 
     <actions>
-        <action id="KJumpAction" class="com.werfad.KJumpAction" text="KJump"
+        <action id="FJumpAction" class="com.fanyfull.FJumpAction" text="FJump"
                 description="Input 1 character and jump to any same character."/>
-        <action id="KJumpAction.Char2" class="com.werfad.Char2Action" text="KJump Char 2"
+        <action id="FJumpAction.Char2" class="com.fanyfull.Char2Action" text="FJump Char 2"
                 description="Input 2 character and jump to any same character."/>
-        <action id="KJumpAction.Word0" class="com.werfad.Word0Action" text="KJump Word 0"
+        <action id="FJumpAction.Word0" class="com.fanyfull.Word0Action" text="FJump Word 0"
                 description="Jump to any word."/>
-        <action id="KJumpAction.Word1" class="com.werfad.Word1Action" text="KJump Word 1"
+        <action id="FJumpAction.Word1" class="com.fanyfull.Word1Action" text="FJump Word 1"
                 description="Input 1 character and jump to any word start with this character."/>
-        <action id="KJumpAction.Line" class="com.werfad.LineAction" text="KJump Line"
+        <action id="FJumpAction.Line" class="com.fanyfull.LineAction" text="FJump Line"
                 description="Jump to any line."/>
-        <action id="KJumpAction.Word1GotoDeclaration" class="com.werfad.GotoDeclarationWord1Action"
-                text="KJump Word 1 Goto Declaration"
+        <action id="FJumpAction.Word1GotoDeclaration" class="com.fanyfull.GotoDeclarationWord1Action"
+                text="FJump Word 1 Goto Declaration"
                 description="Input 1 character and jump to declaration of any word start with this character."/>
+        <action id="FJumpAction.WordEnd" class="com.fanyfull.WordEndAction" text="FJump Word End"
+                description="Jump to any word end."/>
     </actions>
 
 </idea-plugin>

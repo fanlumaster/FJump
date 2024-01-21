@@ -1,13 +1,13 @@
-package com.werfad
+package com.fanyfull
 
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.components.PersistentStateComponent
 import com.intellij.openapi.components.State
 import com.intellij.openapi.components.Storage
 import com.intellij.util.xmlb.XmlSerializerUtil
-import com.werfad.UserConfig.DataBean
+import com.fanyfull.UserConfig.DataBean
 
-@State(name = "KJump", storages = [Storage("KJump.xml")])
+@State(name = "FJump", storages = [Storage("FJump.xml")])
 class UserConfig : PersistentStateComponent<DataBean> {
     private val dataBean = DataBean()
     override fun getState(): DataBean {

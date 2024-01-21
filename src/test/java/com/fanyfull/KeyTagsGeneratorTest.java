@@ -1,4 +1,4 @@
-package com.werfad;
+package com.fanyfull;
 
 import org.junit.Test;
 

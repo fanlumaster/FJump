@@ -1,8 +1,8 @@
-package com.werfad.finder
+package com.fanyfull.finder
 
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.util.TextRange
-import com.werfad.MarksCanvas
+import com.fanyfull.MarksCanvas
 
 interface Finder {
     /**

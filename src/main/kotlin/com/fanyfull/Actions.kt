@@ -1,4 +1,4 @@
-package com.werfad
+package com.fanyfull
 
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
@@ -17,7 +17,7 @@ abstract class BaseAction : DumbAwareAction() {
     abstract fun getMode(): Int
 }
 
-class KJumpAction : BaseAction() {
+class FJumpAction : BaseAction() {
     override fun getMode() = JumpHandler.MODE_CHAR1
 }
 
@@ -25,6 +25,9 @@ class Char2Action : BaseAction() {
     override fun getMode() = JumpHandler.MODE_CHAR2
 }
 
+/**
+ * Jump to start of any word on visible screen
+ */
 class Word0Action : BaseAction() {
     override fun getMode() = JumpHandler.MODE_WORD0
 }
@@ -39,4 +42,11 @@ class LineAction : BaseAction() {
 
 class GotoDeclarationWord1Action : BaseAction() {
     override fun getMode() = JumpHandler.MODE_WORD1_DECLARATION
+}
+
+/**
+ * Jump to start of any word on visible screen
+ */
+class WordEndAction : BaseAction() {
+    override fun getMode() = JumpHandler.MODE_WORD_END
 }

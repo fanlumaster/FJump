@@ -1,4 +1,4 @@
-package com.werfad
+package com.fanyfull
 
 import com.intellij.openapi.actionSystem.*
 import com.intellij.openapi.command.CommandProcessor
@@ -11,8 +11,8 @@ import com.intellij.openapi.editor.actionSystem.EditorActionManager
 import com.intellij.openapi.editor.actionSystem.TypedAction
 import com.intellij.openapi.editor.actionSystem.TypedActionHandler
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory
-import com.werfad.finder.*
-import com.werfad.utils.getVisibleRangeOffset
+import com.fanyfull.finder.*
+import com.fanyfull.utils.getVisibleRangeOffset
 
 object JumpHandler : TypedActionHandler {
     const val MODE_CHAR1 = 0
@@ -21,6 +21,7 @@ object JumpHandler : TypedActionHandler {
     const val MODE_WORD1 = 3
     const val MODE_LINE = 4
     const val MODE_WORD1_DECLARATION = 5
+    const val MODE_WORD_END = 6
 
     private var mOldTypedHandler: TypedActionHandler? = null
     private var mOldEscActionHandler: EditorActionHandler? = null
@@ -124,6 +125,7 @@ object JumpHandler : TypedActionHandler {
                         .actionPerformed(anActionEvent)
                 }
             }
+            MODE_WORD_END -> finder = WordEndFinder()
             else -> throw RuntimeException("Invalid start mode: $mode")
         }
         val visibleBorderOffset = editor.getVisibleRangeOffset()

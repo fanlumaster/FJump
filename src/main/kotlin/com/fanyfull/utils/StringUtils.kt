@@ -1,4 +1,4 @@
-package com.werfad.utils
+package com.fanyfull.utils
 
 fun String.findAll(c: Char, ignoreCase: Boolean = false): List<Int> {
     val res = ArrayList<Int>()

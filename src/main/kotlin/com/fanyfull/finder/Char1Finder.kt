@@ -1,11 +1,11 @@
-package com.werfad.finder
+package com.fanyfull.finder
 
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.util.TextRange
-import com.werfad.KeyTagsGenerator
-import com.werfad.MarksCanvas
-import com.werfad.UserConfig
-import com.werfad.utils.findAll
+import com.fanyfull.KeyTagsGenerator
+import com.fanyfull.MarksCanvas
+import com.fanyfull.UserConfig
+import com.fanyfull.utils.findAll
 import kotlin.math.abs
 
 private const val STATE_WAIT_SEARCH_CHAR = 0

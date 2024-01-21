@@ -1,9 +1,9 @@
-package com.werfad
+package com.fanyfull
 
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.editor.colors.EditorFontType
-import com.werfad.UserConfig.DataBean
-import com.werfad.utils.offsetToXYCompat
+import com.fanyfull.UserConfig.DataBean
+import com.fanyfull.utils.offsetToXYCompat
 import java.awt.*
 import javax.swing.JComponent
 
