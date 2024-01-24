@@ -129,6 +129,7 @@ object JumpHandler : TypedActionHandler {
             else -> throw RuntimeException("Invalid start mode: $mode")
         }
         val visibleBorderOffset = editor.getVisibleRangeOffset()
+        // val caretModel = editor.caretModel
         val visibleString = editor.document.getText(visibleBorderOffset)
         val marks = finder.start(editor, visibleString, visibleBorderOffset)
         if (marks != null) {

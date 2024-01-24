@@ -1,5 +1,6 @@
 package com.fanyfull.utils
 
+import com.intellij.openapi.editor.CaretModel
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.editor.LogicalPosition
 import com.intellij.openapi.util.TextRange
@@ -11,6 +12,16 @@ fun Editor.getVisibleRangeOffset(): TextRange {
     val startLog = xyToLogicalPosition(Point(0, visibleArea.y))
     val lastLog = xyToLogicalPosition(Point(0, visibleArea.y + visibleArea.height))
     val startOff = logicalPositionToOffset(startLog)
+    val endOff = logicalPositionToOffset(LogicalPosition(lastLog.line + 1, lastLog.column))
+    return TextRange(startOff, endOff)
+}
+
+fun Editor.getVisibleRangeOffsetAfterCursor(caretModel: CaretModel): TextRange {
+    val scrollingModel = scrollingModel
+    val visibleArea = scrollingModel.visibleArea
+    val startLog = xyToLogicalPosition(Point(0, visibleArea.y))
+    val lastLog = xyToLogicalPosition(Point(0, visibleArea.y + visibleArea.height))
+    val startOff = caretModel.offset
     val endOff = logicalPositionToOffset(LogicalPosition(lastLog.line + 1, lastLog.column))
     return TextRange(startOff, endOff)
 }
