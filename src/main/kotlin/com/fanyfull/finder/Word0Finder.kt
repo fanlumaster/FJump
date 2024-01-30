@@ -7,7 +7,7 @@ import com.fanyfull.MarksCanvas
 import com.fanyfull.UserConfig
 import kotlin.math.abs
 
-private val pattern = Regex("(?i)\\b\\w")
+private val pattern = Regex("\\b[\\p{L}\\p{M}]+\\b")
 
 class Word0Finder : Finder {
     override fun start(e: Editor, s: String, visibleRange: TextRange): List<MarksCanvas.Mark> {

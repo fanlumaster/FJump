@@ -8,7 +8,7 @@ import com.fanyfull.MarksCanvas
 import com.fanyfull.UserConfig
 import kotlin.math.abs
 
-private val pattern = Regex("(?i)\\w\\b")
+private val pattern = Regex("\\b[\\p{L}\\p{M}]+\\b")
 
 class WordEndFinder: Finder {
     // 获取 Logger 实例，参数是当前类的 KClass 对象
@@ -19,7 +19,7 @@ class WordEndFinder: Finder {
     override fun start(e: Editor, s: String, visibleRange: TextRange): List<MarksCanvas.Mark> {
         val cOffset = e.caretModel.offset
         val offsets = pattern.findAll(s)
-            .map { it.range.first + visibleRange.startOffset }
+            .map { it.range.last + visibleRange.startOffset }
             .sortedBy { abs(it - cOffset) }
             .toList()
 
