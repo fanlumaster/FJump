@@ -46,11 +46,13 @@ class MarksCanvas : JComponent() {
                 val keyTag = it.first.keyTag
                 val bounds = mFontMetrics.getStringBounds(keyTag.substring(it.first.advanceIndex), g).bounds
 
-                g2d.fillRect(it.second.x - x, it.second.y - y, bounds.width, bounds.height)
+                // here we could adjust the offset of background rects
+                g2d.fillRect(it.second.x - x, it.second.y - y + 2, bounds.width, bounds.height + 2)
                 g2d.font = mFont
 
+                // here we could adjust the offset of foreground strings
                 val xInCanvas = it.second.x - x
-                val yInCanvas = it.second.y - y + bounds.height - mFontMetrics.descent
+                val yInCanvas = it.second.y - y + bounds.height - mFontMetrics.descent + 2
                 if (keyTag.length == 2) {
                     if (it.first.advanceIndex == 0) {
                         val midX = xInCanvas + bounds.width / 2
